@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach's Corner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">Coach's Corner</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active" data-section="roster">Roster</li>
+                    <li data-section="games">Games</li>
+                    <li data-section="playbook">Playbook</li>
+                    <li data-section="notes">Notes</li>
+                </ul>
+            </nav>
+            <div class="coach-info">Coach Taylor</div>
+        </aside>
+
+        <main class="content-area">
+            <header class="main-header">
+                <h1>Team Roster</h1>
+                <div class="header-actions">
+                    <button id="add-player-btn" class="action-button primary">Add New Player</button>
+                    <!-- <button class="action-button">View All Stats</button> -->
+                </div>
+            </header>
+
+            <section id="roster-section" class="app-section active">
+                <div class="player-list-container">
+                    <table class="player-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Player Name</th>
+                                <th>Position</th>
+                                <th>Games Played</th>
+                                <th>Points Avg</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="player-rows">
+                            <!-- Player rows will be injected here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Other sections (Games, Playbook, Notes) will go here, hidden by default -->
+            <section id="games-section" class="app-section">
+                <h2>Upcoming Games</h2>
+                <p>This section will list games and allow tracking.</p>
+            </section>
+            <section id="playbook-section" class="app-section">
+                <h2>Playbook & Drills</h2>
+                <p>Here you can store your team's plays and practice drills.</p>
+            </section>
+            <section id="notes-section" class="app-section">
+                <h2>Coach's Notes</h2>
+                <p>A place for important reminders and observations.</p>
+            </section>
+
+            <!-- Player Add/Edit Modal -->
+            <div id="player-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Add/Edit Player</h2>
+                    <form id="player-form">
+                        <label for="player-number">Number:</label>
+                        <input type="number" id="player-number" required>
+
+                        <label for="player-name">Name:</label>
+                        <input type="text" id="player-name" required>
+
+                        <label for="player-position">Position:</label>
+                        <input type="text" id="player-position">
+
+                        <button type="submit" class="primary">Save Player</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
